@@ -61,6 +61,8 @@ func BuildUI(myApp fyne.App) *fyne.Container {
 	commonButton := widget.NewButton("Generate Common Items", GenerateButton(myApp, quantity, loader.Common))
 	uncommonButton := widget.NewButton("Generate Uncommon Items", GenerateButton(myApp, quantity, loader.Uncommon))
 	rareButton := widget.NewButton("Generate Rare Items", GenerateButton(myApp, quantity, loader.Rare))
-	rarityButtons := container.NewVBox(commonButton, uncommonButton, rareButton)
+	veryRareButton := widget.NewButton("Generate Very Rare Items", GenerateButton(myApp, quantity, loader.VeryRare))
+	legendaryButton := widget.NewButton("Generate Legendary Items", GenerateButton(myApp, quantity, loader.Legendary))
+	rarityButtons := container.NewVBox(commonButton, uncommonButton, rareButton, veryRareButton, legendaryButton)
 	return container.NewVBox(quantity, rarityButtons)
 }

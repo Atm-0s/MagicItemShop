@@ -188,7 +188,8 @@ func ShopPopulator(quantity int, rarity Rarity) ([]MagicItem, error) {
 		return nil, err
 	}
 	for i := 0; i < quantity; i++ {
-		n := rand.Intn(100) + 1
+		// To have more table types, easiest way may be to have n:= rand.Intn(400) +1
+		n := rand.Intn(400) + 1
 		for _, item := range allItems {
 			if item.Rarity == rarity {
 				tableNumMap := make(map[int]struct{}, len(item.TableNumber))
